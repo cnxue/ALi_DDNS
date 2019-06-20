@@ -1,1 +1,15 @@
-{"AccessKeyId":"xxxxxxxxxxxxxx","AccessKeySecret":"xxxxxxxxxxxxxxx","Region":"cn-shenzhen"}
+
+{
+    "AccessKeyId":"xxxxxxxxxxxxxxx",
+    "AccessKeySecret":"xxxxxxxxxxxxxxxxxxxxx",
+    "Region":"cn-shenzhen",
+    "args": [{
+		"Type": "A",
+		"domain": "baidu.cn",
+		"RR": ["test", "testing"]
+	}, {
+		"Type": "A",
+		"domain": "baidu.com",
+		"RR": ["www"]
+	}]
+}
