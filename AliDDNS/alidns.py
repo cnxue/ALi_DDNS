@@ -29,7 +29,7 @@ class Logger(logging.Logger):
         self.addHandler(ch)
 
 class GetIP():
-    '''获取IP'''
+    '''获取外网IP'''
 
     def __init__(self):
         pass
@@ -45,6 +45,7 @@ class GetIP():
         return host
 
     def getLocalIP1(self):
+    	'''获取本机的外网IP 2'''
         url = 'https://httpbin.org/get?show_env=1'
         result = requests.get(url).json()
         host = result['headers']['X-Real-Ip']
@@ -134,15 +135,6 @@ class AliDNS():
                     return i['Value']
         except:
             return '127.0.0.1'
-
-    def Get_Result2(self, domain):
-        self.request = DescribeDomainRecordsRequest()
-        self.request.set_accept_format('json')
-        # self.request.set_RRKeyWord(keyword)
-        self.request.set_DomainName(domain)
-        response = self.client.do_action_with_exception(self.request)
-        jsonObj = json.loads(response.decode("UTF-8"))
-        return jsonObj
 
     def run(self):
         while 1:
